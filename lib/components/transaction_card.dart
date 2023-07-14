@@ -5,9 +5,13 @@ class TransactionCard extends StatelessWidget {
   const TransactionCard({
     super.key,
     this.imagePath = "assets/images/momo.png",
+    this.name = "Emmanuel Rockson\nKwabena Uncle Ebo",
+    this.status = Status.successful,
   });
 
   final String imagePath;
+  final String name;
+  final Status status;
 
   @override
   Widget build(BuildContext context) {
@@ -45,52 +49,85 @@ class TransactionCard extends StatelessWidget {
                 width: 8.0,
               ),
               Expanded(
-                  child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    "Emmanuel Rockson\nKwabena Uncle Ebo",
-                    style: GoogleFonts.nunitoSans(
-                      fontSize: 14.0,
-                      color: Colors.black,
-                      fontWeight: FontWeight.normal,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      name,
+                      style: GoogleFonts.nunitoSans(
+                        fontSize: 14.0,
+                        color: Colors.black,
+                        fontWeight: FontWeight.normal,
+                      ),
                     ),
-                  ),
-                  Text(
-                    "024 123 4567",
-                    style: GoogleFonts.nunitoSans(
-                      fontSize: 14.0,
-                      color: const Color(0xFF9EADBA),
-                      fontWeight: FontWeight.normal,
-                    ),
-                  )
-                ],
-              ),),
-              Column(
+                  ],
+                ),
+              ),
+               Column(
                 crossAxisAlignment: CrossAxisAlignment.end,
                 children: [
-                  const StatusContainer(),
-                  Text(
-                    "GHS 500",
-                    style: GoogleFonts.nunitoSans(
-                      fontSize: 14.0,
-                      color: Colors.black,
-                      fontWeight: FontWeight.w800,
-                    ),
-                  )
+                  StatusContainer(
+                    status: status,
+                  ),
                 ],
               )
             ],
           ),
-          const SizedBox(height: 16.0,),
+          const SizedBox(
+            height: 4.0,
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 47.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Text(
+                  "024 123 4567",
+                  style: GoogleFonts.nunitoSans(
+                    fontSize: 14.0,
+                    color: const Color(0xFF9EADBA),
+                    fontWeight: FontWeight.normal,
+                  ),
+                ),
+                Text(
+                  "GHS 500",
+                  style: GoogleFonts.nunitoSans(
+                    fontSize: 14.0,
+                    color: Colors.black,
+                    fontWeight: FontWeight.w800,
+                  ),
+                )
+              ],
+            ),
+          ),
+          const SizedBox(
+            height: 16.0,
+          ),
           Container(
             height: 1.0,
             color: const Color(0xFFE6EAED),
           ),
-          const SizedBox(height: 25.0,),
+          const SizedBox(
+            height: 25.0,
+          ),
           Row(
             children: [
-              SizedBox(height: 25.0, width: 25.0, child: Image.asset("assets/images/personal.png"),)
+              SizedBox(
+                height: 25.0,
+                width: 25.0,
+                child: Image.asset("assets/images/personal.png"),
+              ),
+              const SizedBox(
+                width: 8.0,
+              ),
+              Text(
+                "Personal",
+                style: GoogleFonts.nunitoSans(
+                  fontSize: 12.0,
+                  color: Colors.black,
+                  fontWeight: FontWeight.normal,
+                ),
+              )
             ],
           )
         ],

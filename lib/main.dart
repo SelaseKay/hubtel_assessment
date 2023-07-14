@@ -88,6 +88,34 @@ class _MyHomePageState extends State<MyHomePage> {
                 height: 16.0,
               ),
               TransactionCard(),
+              const SizedBox(
+                height: 16.0,
+              ),
+              TransactionCard(
+                imagePath: "assets/images/absa.png",
+                name: "Absa Bank",
+                status: Status.failed,
+              ),
+              const SizedBox(
+                height: 16.0,
+              ),
+              Row(
+                children: [
+                  DateContainer(
+                    date: "May 23, 2022",
+                  ),
+                ],
+              ),
+               const SizedBox(
+                height: 16.0,
+              ),
+              TransactionCard(
+                imagePath: "assets/images/momo.png",
+                name: "Emmanuel Rockson",
+              ),
+              const SizedBox(
+                height: 16.0,
+              ),
             ],
           ))
         ],
